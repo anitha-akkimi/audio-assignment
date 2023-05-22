@@ -1,0 +1,37 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+.player-container {
+  background-color: black;
+  border-radius: 15px;
+  padding: 10px;
+  color: white;
+  width: 600px;
+
+}
+.heading {
+  text-align: center;
+}
+
+.audio-mover {
+  width: 600px;
+  height: 5px;
+  background-color: white;
+}
+.btn-style {
+  border-width: 0px;
+  background-color: transparent;
+  cursor: pointer;
+}
+.icon-style {
+  color: white;
+}
+.controls {
+  display: flex;
+  justify-content: center;
+  padding: 10px;
+}
