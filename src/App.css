@@ -35,3 +35,11 @@
   justify-content: center;
   padding: 10px;
 }
+.audio-container {
+  height: 7px;
+  width: 600px;
+  background-color: #393b39;
+}
+.input-style {
+  color: black;
+}
