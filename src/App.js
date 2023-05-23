@@ -7,7 +7,7 @@ import {useState,useRef, useEffect} from 'react'
  import VolumeDownIcon from '@mui/icons-material/VolumeDown';
  import VolumeUpIcon from '@mui/icons-material/VolumeUp';
 import './App.css';
-import { duration } from '@mui/material';
+
 
 const audioClips = [
   {
@@ -20,7 +20,7 @@ const audioClips = [
   }
   ,
   {
-    sound : "http://commondatastorage.googleapis.com/codeskulptor-assets/Epoq-Lepidoptera.ogg",
+    sound : "http://codeskulptor-demos.commondatastorage.googleapis.com/GalaxyInvaders/theme_01.mp3",
     label : "Dragon sera"
   }
 ]
@@ -77,6 +77,7 @@ const onPlay = () => {
     const index = songs.findIndex(each => each.sound===currentSong.sound)
     if(index === 0) {
       setCurrentSong(audioClips[audioClips.length - 1])
+      
     }
     else {
       setCurrentSong(audioClips[index-1])
@@ -98,6 +99,11 @@ const onPlay = () => {
     setIsPlaying(false)
 
   }
+
+  const handleAudioPlay = () => {
+    audioRef.current.currentTime = 0;
+    audioRef.current.play()
+  }
   
   console.log(isPlaying)
   return(
@@ -107,7 +113,7 @@ const onPlay = () => {
         ref={audioRef}
         src={currentSong.sound}
         onTimeUpdate={onPlaying}
-        onEnded={handleNext}
+        onEnded={handleAudioPlay}
         />
         <h3 className='heading'>{currentSong.label}</h3>
         <div className='audio-container' onClick={checkWidth} ref={clickRef}>
